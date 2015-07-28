@@ -1,6 +1,7 @@
 /**
  * @attribute rector-lang
  * @attribute rector-eval
+ * @attribute rector-markup-continuation
  */
 angular.module('rector').directive('rectorMarkup', ['$compile', function ($compile) {
     'use strict';

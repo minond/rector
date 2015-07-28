@@ -1,3 +1,6 @@
+/**
+ * @attribute rector-section-stand-alone
+ */
 angular.module('rector').directive('rectorToc', function () {
     'use strict';
 
