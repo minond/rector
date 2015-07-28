@@ -15,7 +15,7 @@ rector-toc .rector-toc--items {
     border-style: solid;
     border-width: 1px;
     display: inline-block;
-    height: calc(100vh - 85px);
+    height: calc(100vh - 50px);
     left: -220px;
     overflow: auto;
     position: absolute;

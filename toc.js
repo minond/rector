@@ -22,7 +22,8 @@ angular.module('rector').directive('rectorToc', function () {
                     angular.element('rector-section').parent().fadeOut();
                     $section.parent().fadeIn();
                 } else {
-                    angular.element('rector-section').parent().fadeIn();
+                    angular.element('rector-section[rector-stand-alone]').parent().fadeOut();
+                    angular.element('rector-section:not([rector-stand-alone])').parent().fadeIn();
                     scroll_to($section);
                 }
 
