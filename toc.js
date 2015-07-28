@@ -18,12 +18,12 @@ angular.module('rector').directive('rectorToc', function () {
             function show($section) {
                 if ($section === $last) {
                     return;
-                } else if ($section.attr('rector-stand-alone') !== undefined) {
+                } else if ($section.attr('rector-section-stand-alone') !== undefined) {
                     angular.element('rector-section').fadeOut();
                     $section.fadeIn();
                 } else {
-                    angular.element('rector-section[rector-stand-alone]').fadeOut();
-                    angular.element('rector-section:not([rector-stand-alone])').fadeIn();
+                    angular.element('rector-section[rector-section-stand-alone]').fadeOut();
+                    angular.element('rector-section:not([rector-section-stand-alone])').fadeIn();
                     scroll_to($section);
                 }
 
@@ -31,17 +31,17 @@ angular.module('rector').directive('rectorToc', function () {
             }
 
             angular.element('rector-section').each(function () {
-                var $this = angular.element(this),
-                    label = $this.find('rector-section-label').text();
+                var $section = angular.element(this),
+                    label = $section.find('rector-section-label').text();
 
-                $home = $home || $this;
+                $home = $home || $section;
                 angular.element('<div></div>')
                     .text(label)
                     .appendTo($items)
                     .addClass('rector-toc--item')
                     .attr('tabindex', '0')
                     .on('click keypress', function () {
-                        show($this);
+                        show($section);
                     });
             });
 
