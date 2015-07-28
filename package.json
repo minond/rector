@@ -1,11 +1,7 @@
 {
   "name": "rector",
   "version": "1.0.0",
-  "description": "",
-  "main": "markup.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "description": "style guide helper",
+  "author": "Marcos Minond <minond.marcos@gmail.com>",
   "license": "ISC"
 }
