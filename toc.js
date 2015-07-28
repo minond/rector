@@ -19,11 +19,11 @@ angular.module('rector').directive('rectorToc', function () {
                 if ($section === $last) {
                     return;
                 } else if ($section.attr('rector-stand-alone') !== undefined) {
-                    angular.element('rector-section').parent().fadeOut();
-                    $section.parent().fadeIn();
+                    angular.element('rector-section').fadeOut();
+                    $section.fadeIn();
                 } else {
-                    angular.element('rector-section[rector-stand-alone]').parent().fadeOut();
-                    angular.element('rector-section:not([rector-stand-alone])').parent().fadeIn();
+                    angular.element('rector-section[rector-stand-alone]').fadeOut();
+                    angular.element('rector-section:not([rector-stand-alone])').fadeIn();
                     scroll_to($section);
                 }
 
@@ -32,7 +32,7 @@ angular.module('rector').directive('rectorToc', function () {
 
             angular.element('rector-section').each(function () {
                 var $this = angular.element(this),
-                    label = $this.text();
+                    label = $this.find('rector-section-label').text();
 
                 $home = $home || $this;
                 angular.element('<div></div>')
