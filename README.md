@@ -20,4 +20,4 @@ below
 </rector-markup>
 ```
 
-[Imgur](http://i.imgur.com/5YbfWfH.png)
+![Sample](http://i.imgur.com/5YbfWfH.png)
