@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="browser-ie7 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="browser-ie8 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="browser-ie9 lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="browser-modern"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/generic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.min.css">
+
+        <script src="rector.js"></script>
+        <script src="markup.js"></script>
+        <link rel="stylesheet" href="rector.css">
+
+        <script>
+        angular.module('sample', ['rector']);
+        </script>
+
+        <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 14px;
+        }
+
+        table, td, th {
+            border-collapse: collapse;
+            border: 1px solid #9E9E9E;
+            padding: 10px 20px;
+        }
+        </style>
+    </head>
+    <body ng-app="sample">
+
+        <rector-markup>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>1S</th>
+                        <th>2S</th>
+                        <th>3S</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Captain Falcon</td>
+                        <td>715</td>
+                        <td>119</td>
+                        <td>135</td>
+                        <td>88</td>
+                    </tr>
+                </tbody>
+            </table>
+        </rector-markup>
+    </body>
+</html>
