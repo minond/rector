@@ -21,12 +21,3 @@ below
 ```
 
 ![Sample](http://i.imgur.com/5YbfWfH.png)
-
-and remember to include rainbow for the syntax highlighting:
-
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/generic.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.min.css">
-```

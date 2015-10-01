@@ -8,8 +8,6 @@ angular.module('rector', []);
 angular.module('rector').directive('rectorMarkup', ['$compile', function ($compile) {
     'use strict';
 
-    /* global Rainbow */
-
     /**
      * @param {String} str
      * @return {String}
@@ -81,10 +79,7 @@ angular.module('rector').directive('rectorMarkup', ['$compile', function ($compi
 
                 snippet.appendChild(snippetContent);
                 node.appendChild(snippet);
-
-                Rainbow.color(content, attrs.rectorLang || 'html', function (code) {
-                    snippetContent.innerHTML = code;
-                });
+                snippetContent.innerText = content;
             };
         }
     };
