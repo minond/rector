@@ -1,11 +1,48 @@
 angular.module('rector', []);
 
 /**
+ * @attribute static
+ * @attribute watch-collection
+ */
+angular.module('rector').directive('rectorScope', [function () {
+    'use strict';
+
+    return {
+        restrict: 'E',
+        compile: function (elem, attrs) {
+            var node = elem[0],
+                snippet = document.createElement('pre'),
+                snippetContent = document.createElement('code');
+
+            elem.addClass('rector-element');
+
+            return function (scope) {
+                node.innerText = '$scope.' + (attrs.static || attrs.watchCollection);
+
+                snippet.appendChild(snippetContent);
+                node.appendChild(snippet);
+
+                switch (true) {
+                    case !!attrs.static:
+                        snippetContent.innerText = scope[attrs.static].toString();
+                        break;
+
+                    case !!attrs.watchCollection:
+                        scope.$watchCollection(attrs.watchCollection, function (val) {
+                            snippetContent.innerText = JSON.stringify(val, null, '  ');
+                        });
+                        break;
+                }
+            };
+        }
+    };
+}]);
+
+/**
  * @attribute rector-lang
  * @attribute rector-eval
- * @attribute rector-markup-continuation
  */
-angular.module('rector').directive('rectorMarkup', ['$compile', function ($compile) {
+angular.module('rector').directive('rectorMarkup', [function () {
     'use strict';
 
     /**
@@ -70,6 +107,8 @@ angular.module('rector').directive('rectorMarkup', ['$compile', function ($compi
                 snippet = document.createElement('pre'),
                 snippetContent = document.createElement('code'),
                 content = removeLeadingWhitespace(node.innerHTML);
+
+            elem.addClass('rector-element');
 
             return function (scope) {
                 if (attrs.rectorEval) {
